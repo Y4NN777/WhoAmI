@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who is Y4NN</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+  <div class="mouse-follower"></div>
+
+  <section class="hero">
+    <div class="background" id="interactive-bg"></div>
+    <div class="hero-image">
+      <div class="social-links">
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://stackoverflow.com/users/yourusername" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+      </div>
+      <img src="Y4NN_Profile_Photo.jpeg" alt="Hero Image">
+    </div>
+ 
+    <div class="hero-content">
+      <h2><span style="background-color: rgba(5, 62, 85, 0.2); padding: 0 7px; border-radius: 10px;">Ragnang-Newende Y<span style="color:#64ffda;">a</span>nis Axel DABO</span><span style="font-size: 1rem;"> but just</span><span style="font-size: 1rem;"> call me</span><span style="font-size: 2rem;">Y<span style="color: #64ffda;">4</span>NN</h2>
+      <div class="typewriter" id="typewriter"></div>
+      <div class="slider">
+        <div class="slider-track">
+          <div class="slider-card">
+            <h2><i class="fas fa-user"></i>About Me</h2>
+            <p>Driven by a deep curiosity for both the collaborative and engineering sides of software creation, I thrive on turning ideas into impactful digital solutions. As a fast-learning junior developer,<br><br> I see code as more than just logic, it's a bridge between creativity and precision, where structure meets innovation. With a sharp focus on scalability and user experience, I craft web solutions that don’t just work but resonate, aligning seamlessly with team goals to build something greater than the sum of its parts.</p>
+          </div>
+          <div class="slider-card">
+            <h2><i class="fas fa-tools"></i>Toolkit</h2>
+            <div class="toolkit">
+              <div class="toolkit-item"><i class="fab fa-python"></i> Python</div>
+              <div class="toolkit-item"><i class="fab fa-c"></i> C</div>
+              <div class="toolkit-item"><i class="fab fa-java"></i> Java</div>
+              <div class="toolkit-item"><i class="fab fa-js"></i> JavaScript</div>
+              <div class="toolkit-item"><i class="fab fa-php"></i> PHP</div>
+              <div class="toolkit-item"><i class="fas fa-database"></i> MySQL</div>
+              <div class="toolkit-item"><i class="fas fa-database"></i> SQLite</div>
+              <div class="toolkit-item"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+              <div class="toolkit-item"><i class="fab fa-laravel"></i> Laravel</div>
+              <div class="toolkit-item"><i class="fas fa-paint-brush"></i> Figma</div>
+              <div class="toolkit-item"><i class="fab fa-git-alt"></i> Git</div>
+              <div class="toolkit-item"><i class="fab fa-github"></i> GitHub</div>
+              <div class="toolkit-item"><i class="fas fa-robot"></i> Claude</div>
+              <div class="toolkit-item"><i class="fas fa-tasks"></i> ClickUp</div>
+              <div class="toolkit-item"><i class="fas fa-book"></i> Notion</div>
+            </div>
+            
+             
+          </div>
+          <div class="slider-card">
+            <h2><i class="fas fa-tasks"></i>Things I can work on</h2>
+            <div class="skills-container">
+              <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>I create interactive, maintainable, and fully functional web applications.</p>
+              </div>
+              
+              <div class="skill-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Visual & Web Design</h3>
+                <p>I develop visually appealing designs and captivating user experiences.</p>
+              </div>
+            
+              <div class="skill-card">
+                <i class="fas fa-desktop"></i>
+                <h3>Desktop Applications</h3>
+                <p>I use Java OOP and UI design skills to create user-friendly desktop applications with secure database integration.</p>
+              </div>
+            
+              <div class="skill-card">
+                <i class="fas fa-terminal"></i>
+                <h3>Automation Scripting</h3>
+                <p>I automate repetitive tasks and build genius tools ⚒️ using ⭐ Python ⭐ and Bash for OS control.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="slider-nav">
+          <button id="prevBtn">&lt;</button>
+          <button id="nextBtn">&gt;</button>
+        </div>
+      </div>
+      <!-- Move the social links to the bottom of hero-content -->
+
+    </div>
+  </section>
+
+  <script src="logic.js"></script>
+</body>
+</html>
