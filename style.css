@@ -12,6 +12,11 @@
     overflow: hidden;
   }
 
+  html, body {
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
   /* Mouse follower */
   .mouse-follower {
     position: fixed;
@@ -107,6 +112,7 @@
   .social-links {
     display: flex;
     justify-content: center;
+    
     margin-top: 6 px; /* Increase margin-top to move it further down */
     
   }
@@ -115,11 +121,12 @@
     color: #64ffda;
     font-size: 1.5rem;
     margin: 0 10px;
+    z-index: 9999;
     transition: color 0.3s ease;
   }
 
   .social-links a:hover {
-    color: #ff7e5f;
+    color: #ffffff;
   }
 
   /* Interactive background dots */
@@ -197,7 +204,7 @@
     cursor: pointer;
     z-index: 99;
   }
-
+  .slider-nav button:hover
   .slider-card h2 {
     font-size: 1.5rem;
     color: #64ffda;
@@ -278,84 +285,95 @@ transform: scale(1.03);
 
 /* Add media queries for responsiveness */
 
+/* For devices smaller than 1024px (large tablets and small laptops) */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .slider-card {
+    padding: 1.5rem;
+  }
+
+  .toolkit {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .toolkit-item i {
+    font-size: 2.2rem;
+  }
+}
+
 /* For devices smaller than 768px (tablets and phones) */
 @media (max-width: 768px) {
-    body {
-      font-size: 14px; /* Adjust base font size */
-    }
-  
-    .hero {
-      flex-direction: column;
-      height: auto; /* Allow the hero section to adjust with screen size */
-      padding: 20px;
-    }
-  
-    .hero h1 {
-      font-size: 3rem; /* Reduce heading size on smaller screens */
-    }
-  
-    .hero-image {
-      margin-top: 20px;
-      max-width: 250px; /* Smaller image */
-    }
-  
-    .social-links {
-      margin-top: 20px;
-    }
-  
-    .slider {
-      width: 100%;
-    }
-  
-    .slider-card {
-      padding: 1.5rem; /* Adjust padding for smaller screens */
-    }
-  
-    .toolkit {
-      grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
-    }
-  
-    .toolkit-item i {
-      font-size: 2rem; /* Resize icons */
-    }
+  body {
+    font-size: 14px; /* Adjust base font size */
+    overflow-y: auto; /* Ensure vertical scrolling is enabled */
   }
-  
-  /* For devices smaller than 480px (phones) */
-  @media (max-width: 480px) {
-    body {
-      font-size: 12px; /* Further reduce font size on very small screens */
-    }
-  
-    .hero h1 {
-      font-size: 2.5rem; /* Reduce text size further */
-    }
-  
-    .hero .typewriter {
-      font-size: 1rem;
-    }
-  
-    .hero-image {
-      margin-left: 0;
-      max-width: 180px; /* Even smaller image for very small screens */
-    }
-  
-    .slider-card {
-      padding: 1rem; /* Adjust padding further */
-    }
-  
-    .social-links a {
-      font-size: 1.2rem; /* Adjust icon sizes */
-    }
-  
-    .toolkit {
-      grid-template-columns: 1fr; /* One column on phones */
-    }
-  
-    .toolkit-item {
-      font-size: 0.9rem; /* Smaller font size in toolkit */
-    }
-  
-    .skill-card {
-      font-size: 0.75rem; /* Smaller font for skill cards */
-    }
+
+  .hero {
+    flex-direction: column;
+    height: auto; /* Allow the hero section to adjust with screen size */
+    padding: 20px;
   }
+
+  .hero h1 {
+    font-size: 3rem; /* Reduce heading size on smaller screens */
+  }
+
+  .hero-image {
+    margin-top: 20px;
+    max-width: 250px; /* Smaller image */
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .slider {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  }
+
+  .slider-track {
+    display: flex;
+    width: auto; /* Allow track to adjust width */
+  }
+
+  .slider-card {
+    min-width: 80%; /* Adjust card width for better fit */
+    scroll-snap-align: center; /* Center cards on scroll */
+  }
+
+  .slider-nav {
+    display: none; /* Hide navigation buttons */
+  }
+
+  .slider-card {
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .toolkit {
+    grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+  }
+
+  .toolkit-item i {
+    font-size: 2rem; /* Resize icons */
+  }
+}
+
