@@ -146,20 +146,89 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
 
-function updateSlider() {
-  const width = document.querySelector('.slider').clientWidth;
-  sliderTrack.style.transform = `translateX(-${currentIndex * width}px)`;
+function isMobile() {
+  return window.innerWidth <= 768;
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex > 0) ? currentIndex - 1 : 2;
+function updateSlider() {
+  if (!isMobile()) {
+    const width = document.querySelector('.slider').clientWidth;
+    sliderTrack.style.transform = `translateX(-${currentIndex * width}px)`;
+  } else {
+    sliderTrack.style.transform = 'none'; // Reset transform for mobile scroll view
+  }
+}
+
+if (prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    if (!isMobile()) {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : 2;
+      updateSlider();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (!isMobile()) {
+      currentIndex = (currentIndex < 2) ? currentIndex + 1 : 0;
+      updateSlider();
+    }
+  });
+}
+
+// Initialize ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Function to setup card animations for mobile
+function setupMobileCardAnimations() {
+  if (window.innerWidth <= 768) {
+    const cards = document.querySelectorAll('.slider-card');
+    const slider = document.querySelector('.slider');
+    
+    // Kill any existing ScrollTriggers
+    ScrollTrigger.getAll().forEach(st => st.kill());
+    
+    cards.forEach((card, index) => {
+      // Set initial state
+      gsap.set(card, {
+        opacity: 0,
+        y: 50
+      });
+
+      // Create ScrollTrigger for each card
+      ScrollTrigger.create({
+        trigger: card,
+        scroller: slider,
+        start: 'top bottom-=50',
+        markers: false,
+        onEnter: () => {
+          gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.1,
+            ease: 'power2.out'
+          });
+        }
+      });
+    });
+  }
+}
+
+// Add smooth scroll behavior and animations for mobile
+if (sliderTrack) {
+  if (window.innerWidth <= 768) {
+    sliderTrack.style.scrollBehavior = 'smooth';
+    setupMobileCardAnimations();
+  }
+}
+
+// Update animations on resize
+window.addEventListener('resize', () => {
   updateSlider();
+  if (window.innerWidth <= 768) {
+    setupMobileCardAnimations();
+  }
+  ScrollTrigger.refresh();
 });
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex < 2) ? currentIndex + 1 : 0;
-  updateSlider();
-});
-
-window.addEventListener('resize', updateSlider);
 updateSlider(); // Initial call to set the correct position
