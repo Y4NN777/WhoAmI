@@ -13,7 +13,7 @@ document.addEventListener('mousemove', (e) => {
 // Interactive background
 function createDots() {
   const bg = document.getElementById('interactive-bg');
-  const dotsCount = 50;
+  const dotsCount = 80;
   
   for (let i = 0; i < dotsCount; i++) {
     const dot = document.createElement('div');
