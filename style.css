@@ -6,7 +6,7 @@
 }
 
 body {
-  background:#0B5876;
+  background: #0B5876;
   color: #eaeaea;
   line-height: 1.6;
   overflow: hidden;
@@ -51,7 +51,7 @@ body {
 }
 
 .hero .typewriter {
-  font-size: clamp(0.7em, 1.7vw, 1.2rem);
+  font-size: clamp(0.8em, 1.7vw, 1.2rem);
   opacity: 0.8;
   margin-bottom: 0.35rem;
   display: inline-block;
@@ -59,24 +59,37 @@ body {
   white-space: nowrap;
   border-right: 3px solid #64ffda;
   animation: blink-caret 0.75s step-end infinite;
-  font-weight: bold; /* Make typewriter text bold */
+  font-weight: bold;
+  /* Make typewriter text bold */
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #64ffda; }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #64ffda;
+  }
 }
 
 .hero-image {
   flex: 1;
-  max-width: 365px;
-  margin-left: 30px;
-  margin-top:80px;
+  max-width: 400px;
+  margin-left: 200px;
+  margin-top: 80px;
 }
 
 .hero-image img {
@@ -96,6 +109,7 @@ body {
   margin: 10px auto;
   text-align: left;
   font-size: 1.2rem;
+  ;
 }
 
 .about-card p {
@@ -106,10 +120,11 @@ body {
 /* Social Links */
 .social-links {
   display: flex;
-  
+
   justify-content: center;
-  margin-top: 6 px; /* Increase margin-top to move it further down */
-  
+  margin-top: 6 px;
+  /* Increase margin-top to move it further down */
+
 }
 
 .social-links a {
@@ -213,13 +228,16 @@ body {
     overflow-y: auto;
     max-height: 80vh;
     padding: 10px;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
     position: relative;
   }
 
   .slider::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    display: none;
+    /* Chrome, Safari and Opera */
   }
 
   .slider-track {
@@ -263,70 +281,123 @@ body {
 }
 
 .toolkit {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-gap: 15px;
-margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+  max-height: 300px;
+  /* Set a maximum height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  padding-right: 10px;
+  /* Add some padding for the scrollbar */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: rgba(100, 255, 218, 0.3) transparent;
+  /* For Firefox */
+}
+
+/* Webkit scrollbar styling (Chrome, Safari, etc.) */
+.toolkit::-webkit-scrollbar {
+  width: 8px;
+}
+
+.toolkit::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toolkit::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 255, 218, 0.3);
+  border-radius: 20px;
+}
+
+.toolkit::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 255, 218, 0.5);
 }
 
 .toolkit-item {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 10px;
-background: rgba(100, 255, 218, 0.1);
-border-radius: 10px;
-font-size: 1rem;
-font-weight: 600;
-color: #64ffda;
-transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64ffda;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .toolkit-item i {
-font-size: 2.5rem;
-margin-right: 8px;
+  font-size: 2.5rem;
+  margin-right: 8px;
 }
 
 .toolkit-item:hover {
-background: rgba(100, 255, 218, 0.3);
-transform: scale(1.1);
+  background: rgba(100, 255, 218, 0.3);
+  transform: scale(1.1);
 }
 
 .skills-container {
-display: grid;
-grid-template-columns: repeat(2, 1fr); /* 2 columns for better fit */
-gap: 7px;
-padding: 10px;
-width: 100%;
-/* Adjust to fit the main card */
-margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+  width: 100%;
+  margin: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 255, 218, 0.3) transparent;
 }
 
+/* Webkit scrollbar styling for skills container */
+.skills-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.skills-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.skills-container::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 255, 218, 0.3);
+  border-radius: 20px;
+}
+
+.skills-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 255, 218, 0.5);
+}
+
+
 .skill-card {
-background: rgba(0, 150, 136, 0.1);
-padding: 5px;
-padding-bottom: 5px;
-border-radius: 10px;
-text-align: center;
-transition: transform 0.3s ease, background 0.3s ease;
-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
-font-size: 0.85rem; /* Reduce text size for better fit */
+  background: rgba(0, 150, 136, 0.1);
+  padding: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.85rem;
+  /* Reduce text size for better fit */
 }
 
 .skill-card i {
-font-size: 1.5rem; /* Smaller icons */
-color: #64ffd8;
-margin-bottom: 5px;
+  font-size: 1.5rem;
+  /* Smaller icons */
+  color: #64ffd8;
+  margin-bottom: 5px;
 }
 
 .skill-card h3 {
-font-size: 1rem;
-margin-bottom: 5px;
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
 .skill-card:hover {
-background: rgba(0, 150, 136, 0.3);
-transform: scale(1.03);
+  background: rgba(0, 150, 136, 0.3);
+  transform: scale(1.03);
 }
 
 /* Add media queries for responsiveness */

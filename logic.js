@@ -99,7 +99,7 @@ gsap.from('.social-links a', {
 
 // Typewriter effect
 const typewriterTexts = [
-  ">_ Junior Software Developer",
+  ">_ Software Developer | Backend Systems, Web & Mobile, IA Integration",
   ">_ Blockchain, IoT and AI Enthusiast",
   ">_ Aspiring Software and Systems Engineer"
 ];
