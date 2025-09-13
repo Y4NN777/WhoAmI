@@ -91,8 +91,66 @@
                 <p>I implement robust security measures and best practices across all layers of application development.</p>
               </div>
             </div>
-            
-          </div>
+              
+            </div>
+            <div class="slider-card">
+              <h2><i class="fas fa-envelope"></i> Reach me at</h2>
+              
+              <div class="contact-info">
+                <div class="contact-item" onclick="openEmailClient()" style="cursor: pointer;">
+                  <i class="fas fa-envelope"></i>
+                  <span>y4nn.dev@gmail.com</span>
+                </div>
+                
+                <div class="contact-item" onclick="openWhatsApp()" style="cursor: pointer;">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>+226 67 26 08 83</span>
+                </div>
+                
+                <div class="contact-item" onclick="openLocation()" style="cursor: pointer;">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Rue 9.08, Goughin, Ouagadougou</span>
+                </div>
+              </div>
+              
+              <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(100, 255, 218, 0.05); border-radius: 10px; border: 1px solid rgba(100, 255, 218, 0.2);">
+                <h3 style="color: #64ffda; margin-bottom: 1rem; font-size: 1.1rem;">
+                  <i class="fas fa-paper-plane"></i> Sent me a quick message
+                </h3>
+                
+                <form id="quickContactForm">
+                  <div style="margin-bottom: 0.8rem;">
+                    <input 
+                      type="text" 
+                      id="senderName" 
+                      placeholder="Votre nom" 
+                      required
+                    >
+                  </div>
+                  
+                  <div style="margin-bottom: 0.8rem;">
+                    <textarea 
+                      id="messageText" 
+                      placeholder="Votre message..." 
+                      required
+                      rows="2"
+                      style="resize: vertical;"
+                    ></textarea>
+                  </div>
+                  
+                  <button 
+                    type="submit"
+                    disabled
+                    onclick="sendQuickEmail()" 
+                    style="width: 100%; padding: 0.7rem; background: linear-gradient(45deg, #5acae6, #308d94); border: none; border-radius: 8px; color: #ffffff; font-weight: 600; cursor: pointer; transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'"
+                  >
+                    <i class="fas fa-send"></i> Send by mail
+                  </button>
+                </form>
+              </div>
+            </div>
         </div>
         <div class="slider-nav">
           <button id="prevBtn">&lt;</button>
@@ -100,10 +158,10 @@
         </div>
       </div>
       <!-- Move the social links to the bottom of hero-content -->
-
     </div>
   </section>
 
   <script src="logic.js"></script>
 </body>
 </html>
+

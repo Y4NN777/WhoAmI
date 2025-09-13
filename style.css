@@ -528,3 +528,102 @@ body {
     font-size: clamp(1.5rem, 5vw, 2rem);
   }
 }
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #eaeaea;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-item i {
+  color: #64ffda;
+  font-size: 1.5rem;
+}
+
+.contact-item:hover {
+  background: rgba(100, 255, 218, 0.3);
+  transform: scale(1.05);
+}
+
+/* Responsive for contact items */
+@media (max-width: 768px) {
+  .contact-info {
+    gap: 0.8rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+
+  .contact-item i {
+    font-size: 1.3rem;
+  }
+}
+
+/* Scrollbar corrigée - couleur normale puis vive au hover */
+.slider-card {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.slider-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slider-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.slider-card::-webkit-scrollbar-thumb {
+  background: rgb(43, 134, 143);/* Couleur normale (moins vive) */
+  border-radius: 3px;
+}
+
+.slider-card::-webkit-scrollbar-thumb:hover {
+  background: #64ffda; /* Couleur vive au hover */
+}
+
+/* Inputs simples - suppression complète de la bordure noire */
+#senderName,
+#messageText {
+  width: 100% !important;
+  padding: 0.6rem !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(100, 255, 218, 0.3) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+  outline: none !important; /* Supprime la bordure noire */
+  box-shadow: none !important; /* Supprime toute ombre */
+}
+
+/* Placeholder blanc */
+#senderName::placeholder,
+#messageText::placeholder {
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+
+/* Focus avec bordure blanche uniquement */
+#senderName:focus,
+#messageText:focus {
+  border: 2px solid #ffffff !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
