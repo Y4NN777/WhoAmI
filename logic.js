@@ -139,13 +139,12 @@ function typeWriter() {
 
 typeWriter();
 
-// Slider functionality - CORRECTION ICI
+
 const sliderTrack = document.querySelector('.slider-track');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
 
-// Calculer dynamiquement le nombre total de slides
 const totalSlides = document.querySelectorAll('.slider-card').length;
 
 function isMobile() {
@@ -164,7 +163,7 @@ function updateSlider() {
 if (prevBtn && nextBtn) {
   prevBtn.addEventListener('click', () => {
     if (!isMobile()) {
-      // Correction: utiliser totalSlides - 1 au lieu de 3
+     
       currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalSlides - 1;
       updateSlider();
     }
@@ -172,7 +171,7 @@ if (prevBtn && nextBtn) {
 
   nextBtn.addEventListener('click', () => {
     if (!isMobile()) {
-      // Correction: utiliser totalSlides - 1 au lieu de 3
+    
       currentIndex = (currentIndex < totalSlides - 1) ? currentIndex + 1 : 0;
       updateSlider();
     }
@@ -297,11 +296,11 @@ function sendQuickEmail() {
 
 // Journey Timeline Functionality - Add this to your logic.js file
 
-let journeyInterval;
-let currentPhaseIndex = 0;
-let isJourneyPlaying = true;
-let isUserScrolling = false;
-const PHASE_DURATION = 4000; // 4 seconds per phase
+// let journeyInterval;
+// let currentPhaseIndex = 0;
+// let isJourneyPlaying = true;
+// let isUserScrolling = false;
+// const PHASE_DURATION = 4000; // 4 seconds per phase
 
 // function initializeJourney() {
 //   const journeyContainer = document.getElementById('journeyContainer');
